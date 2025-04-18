@@ -31,10 +31,21 @@ class DailyAdapter(private val items: List<ForecastItem>) :
         private val iconView: ImageView = itemView.findViewById(R.id.imageJour)
 
         fun bind(item: ForecastItem) {
-            val sdf = SimpleDateFormat("EEE", Locale.FRENCH)
-            val date = Date(item.dt * 1000)
-            jourView.text = sdf.format(date).replaceFirstChar { it.uppercase() }
+            val itemDate = Calendar.getInstance()
+            itemDate.time = Date(item.dt * 1000)
 
+            val today = Calendar.getInstance()
+            val isToday = itemDate.get(Calendar.YEAR) == today.get(Calendar.YEAR) &&
+                    itemDate.get(Calendar.DAY_OF_YEAR) == today.get(Calendar.DAY_OF_YEAR)
+
+            val dayLabel = if (isToday) {
+                "Auj."
+            } else {
+                val sdf = SimpleDateFormat("EEE", Locale.FRENCH)
+                sdf.format(itemDate.time).replaceFirstChar { it.uppercase() }
+            }
+
+            jourView.text = dayLabel
             tempView.text = "${item.main.temp.toInt()}°"
             val icon = WeatherIconMapper.getIconResForWeather(item.weather[0].main)
             iconView.setImageResource(icon)
