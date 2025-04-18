@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">AppMeteo</string>
+    <string name="weather_icon">Icône météo</string>
+</resources>

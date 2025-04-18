@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="blue_day">#1C6CDB</color>
+    <color name="blue_night">#03295D</color>
+    <color name="gray_rain">#6A7584</color>
+    <color name="card_translucent_white">#40FFFFFF</color>
+</resources>
