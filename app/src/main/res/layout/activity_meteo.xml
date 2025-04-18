@@ -43,15 +43,15 @@
             android:layout_height="wrap_content"
             android:text="23°"
             android:textColor="@android:color/white"
-            android:textSize="48sp"
+            android:textSize="58sp"
             android:textStyle="bold"
             android:layout_marginBottom="16dp" />
 
         <!-- Icône météo -->
         <ImageView
             android:id="@+id/imageMeteo"
-            android:layout_width="200dp"
-            android:layout_height="200dp"
+            android:layout_width="250dp"
+            android:layout_height="250dp"
             android:src="@drawable/clear"
             android:scaleType="fitCenter"
             android:layout_marginBottom="12dp"
@@ -67,116 +67,155 @@
             android:textSize="18sp"
             android:layout_marginBottom="24dp" />
 
-        <!-- 📆 Bloc prévisions horaires (déplacé ici avant les infos météo) -->
+        <!-- Prévisions horaires -->
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerHourly"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="24dp"
             android:padding="8dp"
-            android:orientation="horizontal"
             android:clipToPadding="false"
             android:scrollbars="horizontal" />
 
-        <!-- Infos météo (humidité, vent, etc.) -->
+        <!-- Infos météo -->
         <GridLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:columnCount="2"
-            android:rowCount="2"
             android:layout_marginBottom="24dp"
             android:alignmentMode="alignMargins"
             android:useDefaultMargins="true">
 
-            <!-- Humidité -->
+
+        <!-- Bloc générique x4 -->
             <LinearLayout
                 style="@style/MeteoCard"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_columnWeight="1"
-                android:orientation="vertical">
-                <TextView
+                android:layout_columnSpan="1"
+                android:layout_gravity="fill_horizontal"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:layout_marginBottom="24dp"
+                android:padding="34dp">
+
+            <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Humidité"
-                    style="@style/MeteoLabel" />
+                    style="@style/MeteoLabel"
+                    android:gravity="center"
+                    android:textAlignment="center" />
+
                 <TextView
                     android:id="@+id/textHumidity"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="52%"
-                    style="@style/MeteoValue" />
+                    style="@style/MeteoValue"
+                    android:gravity="center"
+                    android:textAlignment="center" />
             </LinearLayout>
 
-            <!-- Ressenti -->
             <LinearLayout
                 style="@style/MeteoCard"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_columnWeight="1"
-                android:orientation="vertical">
-                <TextView
+                android:layout_columnSpan="1"
+                android:layout_gravity="fill_horizontal"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:layout_marginBottom="24dp"
+                android:padding="34dp">
+
+            <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Ressenti"
-                    style="@style/MeteoLabel" />
+                    style="@style/MeteoLabel"
+                    android:gravity="center"
+                    android:textAlignment="center" />
+
                 <TextView
                     android:id="@+id/textFeelsLike"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="21°"
-                    style="@style/MeteoValue" />
+                    style="@style/MeteoValue"
+                    android:gravity="center"
+                    android:textAlignment="center" />
             </LinearLayout>
 
-            <!-- Vent -->
             <LinearLayout
                 style="@style/MeteoCard"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_columnWeight="1"
-                android:orientation="vertical">
-                <TextView
+                android:layout_columnSpan="1"
+                android:layout_gravity="fill_horizontal"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:padding="34dp">
+
+
+            <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Vent"
-                    style="@style/MeteoLabel" />
+                    style="@style/MeteoLabel"
+                    android:gravity="center"
+                    android:textAlignment="center" />
+
                 <TextView
                     android:id="@+id/textWind"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="3.6 km/h"
-                    style="@style/MeteoValue" />
+                    style="@style/MeteoValue"
+                    android:gravity="center"
+                    android:textAlignment="center" />
             </LinearLayout>
 
-            <!-- Coucher du soleil -->
             <LinearLayout
                 style="@style/MeteoCard"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_columnWeight="1"
-                android:orientation="vertical">
-                <TextView
+                android:layout_columnSpan="1"
+                android:layout_gravity="fill_horizontal"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:padding="34dp">
+
+
+            <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Coucher du soleil"
-                    style="@style/MeteoLabel" />
+                    style="@style/MeteoLabel"
+                    android:gravity="center"
+                    android:textAlignment="center" />
+
                 <TextView
                     android:id="@+id/textSunset"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="19:45"
-                    style="@style/MeteoValue" />
+                    style="@style/MeteoValue"
+                    android:gravity="center"
+                    android:textAlignment="center" />
             </LinearLayout>
         </GridLayout>
 
-        <!-- 🌤️ Bloc prévisions journalières -->
+        <!-- Prévisions journalières -->
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerDaily"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="32dp"
             android:padding="8dp"
-            android:orientation="horizontal"
             android:clipToPadding="false"
             android:scrollbars="horizontal" />
 

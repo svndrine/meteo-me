@@ -1,10 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <style name="MeteoCard">
+        <item name="android:layout_gravity">center</item>
+        <item name="android:gravity">center</item>
+        <item name="android:background">@drawable/hourly_card_background</item>
+        <item name="android:padding">16dp</item>
+        <item name="android:layout_margin">8dp</item>
         <item name="android:orientation">vertical</item>
-        <item name="android:padding">12dp</item>
-        <item name="android:background">@drawable/bg_hourly_card</item>
     </style>
+
 
     <style name="MeteoLabel">
         <item name="android:textColor">@android:color/white</item>
