@@ -30,7 +30,7 @@ class MeteoActivity : AppCompatActivity() {
     private lateinit var imageMeteo: ImageView
     private lateinit var recyclerHourly: RecyclerView
 
-    private val apiKey = "1fcbae2b519aef96d0ac6343459a0eff" // Remplace par ta vraie clé API
+    private val apiKey = "1fcbae2b519aef96d0ac6343459a0eff" 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
