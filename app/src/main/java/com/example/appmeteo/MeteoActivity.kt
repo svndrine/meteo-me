@@ -19,6 +19,7 @@ import java.util.*
 
 class MeteoActivity : AppCompatActivity() {
 
+    //Déclaration des composants
     private lateinit var textVille: TextView
     private lateinit var textDate: TextView
     private lateinit var textTemp: TextView
@@ -30,13 +31,13 @@ class MeteoActivity : AppCompatActivity() {
     private lateinit var imageMeteo: ImageView
     private lateinit var recyclerHourly: RecyclerView
 
-    private val apiKey = "1fcbae2b519aef96d0ac6343459a0eff" 
+    private val apiKey = "1fcbae2b519aef96d0ac6343459a0eff"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_meteo)
 
-        // Bind vues
+        // Connexion composants/xml
         textVille = findViewById(R.id.textVille)
         textDate = findViewById(R.id.textDate)
         textTemp = findViewById(R.id.textTemp)
@@ -52,9 +53,11 @@ class MeteoActivity : AppCompatActivity() {
 
         val city = intent.getStringExtra("ville_nom") ?: return
 
+        //Appel des fonctions météo
         fetchCurrentWeather(city)
         fetchHourlyForecast(city)
 
+        //setup format date + affichage
         val dateFormat = SimpleDateFormat("EEEE d MMMM", Locale.FRENCH)
         textDate.text = dateFormat.format(Date()).replaceFirstChar { it.uppercase() }
     }
@@ -92,7 +95,7 @@ class MeteoActivity : AppCompatActivity() {
                 val body = response.body?.string()
                 val forecast = Gson().fromJson(body, ForecastResponse::class.java)
 
-                // Prévisions horaires (prochaines heures)
+                // Prévisions horaires ( 5 prochaines heures)
                 val hourly: List<ForecastItem> = forecast?.list?.take(5) ?: emptyList()
 
                 // Prévisions journalières (1 par jour sur 5 jours)

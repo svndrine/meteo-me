@@ -17,6 +17,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        //Récupération de la liste des villes + champ de recherche
         val recyclerView = findViewById<RecyclerView>(R.id.recyclerViewVilles)
         val searchInput = findViewById<EditText>(R.id.searchInput)
 

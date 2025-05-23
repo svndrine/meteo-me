@@ -1,5 +1,6 @@
 package com.example.appmeteo.network
 
+
 data class WeatherResponse(
     val name: String,
     val weather: List<Weather>,

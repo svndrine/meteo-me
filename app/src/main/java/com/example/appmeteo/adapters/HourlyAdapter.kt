@@ -14,11 +14,13 @@ import java.util.*
 class HourlyAdapter(private val items: List<ForecastItem>) :
     RecyclerView.Adapter<HourlyAdapter.HourlyViewHolder>() {
 
+        //création de la carte horaire / item_hour
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): HourlyViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.item_hour, parent, false)
         return HourlyViewHolder(view)
     }
 
+    //envoie des données du forecastItem
     override fun onBindViewHolder(holder: HourlyViewHolder, position: Int) {
         val item = items[position]
         holder.bind(item)
@@ -26,11 +28,13 @@ class HourlyAdapter(private val items: List<ForecastItem>) :
 
     override fun getItemCount(): Int = items.size
 
+    //  chaque carte horaire  // item_hour
     inner class HourlyViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         private val heureView: TextView = itemView.findViewById(R.id.textHeure)
         private val tempView: TextView = itemView.findViewById(R.id.textTempHeure)
         private val iconView: ImageView = itemView.findViewById(R.id.imageHeure)
 
+        //affichage des éléments du forecasItem
         fun bind(item: ForecastItem) {
             val date = Date(item.dt * 1000)
             val sdf = SimpleDateFormat("HH:mm", Locale.FRENCH)

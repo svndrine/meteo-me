@@ -4,10 +4,10 @@
     <selectionStates>
       <SelectionState runConfigName="app">
         <option name="selectionMode" value="DROPDOWN" />
-        <DropdownSelection timestamp="2025-04-17T13:53:01.037208Z">
+        <DropdownSelection timestamp="2025-05-21T12:19:31.839066Z">
           <Target type="DEFAULT_BOOT">
             <handle>
-              <DeviceId pluginId="LocalEmulator" identifier="path=C:\Users\Ebelebe Akouala\.android\avd\Pixel_7_-_MeteoApp.avd" />
+              <DeviceId pluginId="LocalEmulator" identifier="path=/Users/sandrineebelebe/.android/avd/Pixel_9.avd" />
             </handle>
           </Target>
         </DropdownSelection>

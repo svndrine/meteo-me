@@ -14,22 +14,27 @@ import java.util.*
 class DailyAdapter(private val items: List<ForecastItem>) :
     RecyclerView.Adapter<DailyAdapter.DailyViewHolder>() {
 
+        //création de la carte -> item_day
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): DailyViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.item_day, parent, false)
         return DailyViewHolder(view)
     }
 
+    // création envoie des données de journalière
     override fun onBindViewHolder(holder: DailyViewHolder, position: Int) {
         holder.bind(items[position])
     }
 
+
     override fun getItemCount(): Int = items.size
 
+    //accès au éléments item_day
     inner class DailyViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         private val jourView: TextView = itemView.findViewById(R.id.textJour)
         private val tempView: TextView = itemView.findViewById(R.id.textTempJour)
         private val iconView: ImageView = itemView.findViewById(R.id.imageJour)
 
+        //affiche
         fun bind(item: ForecastItem) {
             val itemDate = Calendar.getInstance()
             itemDate.time = Date(item.dt * 1000)

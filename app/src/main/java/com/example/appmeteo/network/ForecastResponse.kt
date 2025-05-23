@@ -1,6 +1,6 @@
 package com.example.appmeteo.network
 
-
+//objet principale json complet
 data class ForecastResponse(
     val list: List<ForecastItem>
 )
